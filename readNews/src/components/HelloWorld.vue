@@ -1,7 +1,8 @@
 <template>
 
   <div class="hello">
-      <h1>BhubejhrCare<span class="badge badge-secondary">News</span></h1>
+      <h3 style = "color :white;">-</h3>
+      <h3 style = "color :white;">-</h3>
     <div class="container">
       <div class="row">
 
@@ -12,8 +13,8 @@
                 <br>
                 <img :src="post.photo" alt="" @click="getID (post['.key'])" width="80%">
               <div class="card-body">
-                <h3 class="card-title">{{post.description}}</h3>
-                <a href="#" class="btn btn-success">อ่านต่อ</a>
+                <h3 class="card-title fontSize">{{post.description}}</h3>
+                <a style = "color :white;" href="#" class="btn bg">อ่านต่อ</a>
               </div>
               </router-link>
           </div>
@@ -53,18 +54,14 @@ export default {
 </script>
 
 <style>
-.head{
-  margin-left: -49%;
-  width: 98%;
-  height: 40px;
-  display: inline-block;
-  background:#00352c;
-  padding: 10px;
-  box-shadow: 0 0 5px #000;
-  z-index: 999;
-  position: fixed;
+img {
+  height: 200px;
+  width: 250px;
 }
-.test{
-  position:fixed;
+.fontSize {
+  font-size: 16px;
+}
+.bg {
+  background:#004D40;
 }
 </style>

@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <router-view :posts="posts" />
+    <div class="head">
+      <h3 style="color :white;">BhubejhrCare <span class="badge badge-secondary">News</span></h3>
+    </div>
+  <router-view :posts="posts" />
   </div>
 </template>
 
@@ -32,12 +35,20 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Prompt&subset=thai');
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Prompt', sans-serif;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+.head{
+  margin-left: -50%;
+  width: 100%;
+  height: 57px;
+  display: inline-block;
+  background:#004D40;
+  padding: 10px;
+  box-shadow: 0 0 5px #000;
+  z-index: 999;
+  position: fixed;
 }
 </style>
