@@ -1,0 +1,43 @@
+<template>
+  <div id="app">
+    <router-view :posts="posts" />
+  </div>
+</template>
+
+<script>
+import firebase from 'firebase'
+var config = {
+  apiKey: 'AIzaSyDhjXvAN661djk4gd2hYuj9b68Ygp6X5BQ',
+  authDomain: 'newsbhu.firebaseapp.com',
+  databaseURL: 'https://newsbhu.firebaseio.com',
+  projectId: 'newsbhu',
+  storageBucket: 'newsbhu.appspot.com',
+  messagingSenderId: '33396632657'
+}
+var firebaseApp = firebase.initializeApp(config)
+var storage = firebase.storage().ref('photoPost')
+var db = firebaseApp.database()
+export default {
+  name: 'app',
+  data () {
+    return {
+        posts: []
+    }
+  },
+  mounted () {
+    var vm = this
+    vm.$bindAsArray('posts', db.ref('posts'))
+  }
+}
+</script>
+
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
