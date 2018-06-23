@@ -3,24 +3,22 @@
   <div class="hello">
       <h3 style = "color :white;">-</h3>
       <h3 style = "color :white;">-</h3>
-    <div class="container">
+    <div class="container is-flex-mobile">
       <div class="row">
+        <div v-for="post in postsFeed" class="col-lg-4">
 
-        <div v-for="post in postsFeed" class="col">
-
-          <div class="card" style="width: 20rem;">
+          <div class="card">
               <router-link :to="'/comments/' + post['.key']">
                 <br>
                 <img :src="post.photo" alt="" @click="getID (post['.key'])" width="80%">
               <div class="card-body">
                 <h3 class="card-title fontSize">{{post.description}}</h3>
-                <a style = "color :white;" href="#" class="btn bg">อ่านต่อ</a>
+                <a style = "color :white;" href="#" class="btn bg fontSize">อ่านต่อ</a>
               </div>
               </router-link>
           </div>
             <br>
         </div>
-
       </div>
     </div>
 
